@@ -2,6 +2,7 @@ package dev.avorakh.tip.helloworld;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,7 +22,10 @@ class HelloWorldTest {
 
         HelloWorld.main(null);
 
-        Assertions.assertEquals("Hello, World!", OUTPUT_STREAM_CAPTOR.toString().trim());
+        Assertions.assertEquals(
+                "Hello, World!",
+                OUTPUT_STREAM_CAPTOR.toString(StandardCharsets.UTF_8).trim(),
+                "Should be 'Hello, World!'");
     }
 
     @AfterAll
