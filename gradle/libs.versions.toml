@@ -8,10 +8,13 @@ junit = '5.12.2'
 groovy = '4.0.26'
 spock = '2.3-groovy-4.0'
 jb-annotation = '26.0.2'
+errorproneVersion = '4.3.0'
+errorproneLib = '2.42.0'
 
 [libraries]
 junit-bom = { module = 'org.junit:junit-bom', version.ref = 'junit' }
 jetbrains-annotations = { module = 'org.jetbrains:annotations', version.ref = 'jb-annotation' }
+error-prone-core = { module = 'com.google.errorprone:error_prone_core', version.ref = 'errorproneLib' }
 groovy = { module = 'org.apache.groovy:groovy-all', version.ref = 'groovy' }
 spock-core = { module = 'org.spockframework:spock-core', version.ref = 'spock' }
 
@@ -21,3 +24,4 @@ groovy-test = ["groovy", 'spock-core']
 [plugins]
 spotless = { id = 'com.diffplug.spotless', version.ref = 'spotless' }
 lombok = { id = 'io.freefair.lombok', version.ref = 'freefairLombokVersion' }
+errorprone = { id = 'net.ltgt.errorprone', version.ref = 'errorproneVersion' }
